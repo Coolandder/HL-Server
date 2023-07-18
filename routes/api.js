@@ -60,7 +60,7 @@ router.get('/words/:level', (req, res, next) => {
 router.patch('/word/change-level', (req, res, next) => {
     Word.updateOne(
         { _id: req.body._id },
-        { $set: { level: req.body._id } }
+        { $set: { level: req.body.level } }
     ).exec()
         .then(result => {
             res.status(200).json(result)
